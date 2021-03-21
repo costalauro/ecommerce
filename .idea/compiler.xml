@@ -6,11 +6,17 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+<<<<<<< HEAD
         <module name="ecommerce" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="11">
       <module name="ecommerce" target="11" />
     </bytecodeTargetLevel>
+=======
+        <module name="ecommerce-alura" />
+      </profile>
+    </annotationProcessing>
+>>>>>>> 6626b99aa051431cb454d4b4e7a5b316ba9a90ea
   </component>
 </project>
