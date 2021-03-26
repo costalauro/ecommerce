@@ -41,13 +41,14 @@ public class BatchSendMessageService {
 
     private final KafkaDispatcher<User> userKafkaDispatcher = new KafkaDispatcher<>();
 
-    private void parse(ConsumerRecord<String, String> record) throws ExecutionException, InterruptedException, SQLException {
+    private void parse(ConsumerRecord<String, Message<String>> record) throws ExecutionException, InterruptedException, SQLException {
         System.out.println("-------------------------------------------");
         System.out.println("Processing new batch");
-        System.out.println("Topic: " + record.value());
+        var message = record.value();
+        System.out.println("Topic: " + message.getPayload());
 
         for (User user : getAllUsers()) {
-            userKafkaDispatcher.send(record.value(), user.getUuid(), user);
+            userKafkaDispatcher.send(message.getPayload(), user.getUuid(), user);
         }
     }
 
