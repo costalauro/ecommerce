@@ -27,7 +27,7 @@ public class NewOrderServlet extends HttpServlet {
         try {
 
             // we are not caring about any security issues, we are only
-            // showing how to use htt as a stating point
+            // showing how to use http as a stating point
             var email = req.getParameter("email");
             var amount = new BigDecimal(req.getParameter("amount"));
 
