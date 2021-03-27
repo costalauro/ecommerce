@@ -2,6 +2,7 @@ package br.com.alura.ecommerce;
 
 import org.apache.kafka.clients.consumer.ConsumerConfig;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
+import org.apache.kafka.common.protocol.types.Field;
 import org.apache.kafka.common.serialization.StringDeserializer;
 
 import java.util.Map;
@@ -19,7 +20,7 @@ public class LogService {
         }
     }
 
-    private void parse(ConsumerRecord<String, String> record) {
+    private void parse(ConsumerRecord<String, Message<String>> record) {
         System.out.println("-------------------------------------------");
         System.out.println("LOG: " + record.topic());
         System.out.println(record.key());
