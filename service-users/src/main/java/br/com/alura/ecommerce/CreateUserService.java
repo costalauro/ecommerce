@@ -52,7 +52,7 @@ public class CreateUserService implements ConsumerService<Order> {
 
     private boolean isNewUser(String email) throws SQLException {
         var results = database.query("select uuid from Users " +
-                "where email = ? limit 1 ");
+                "where email = ? limit 1 ", email);
         return !results.next();
     }
 
